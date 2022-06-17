@@ -1,10 +1,9 @@
 /* Button used to open the contact form - fixed at the bottom of the page */
-
 .topnav {
   background-color: #333;
   overflow: hidden;
 }
-
+html, body { padding: 0; margin: 0;}
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
@@ -12,8 +11,9 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 19px;
 }
+
 
 
 
@@ -23,7 +23,7 @@ ul {
 }
 
 h3 {
-  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+  font: bold 25px/1.5 Helvetica, Verdana, sans-serif;
 }
 
 li img {
@@ -32,7 +32,11 @@ li img {
 }
 
 li p {
-  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+  font: 200 18px/1.5 Georgia, Times New Roman, serif;
+}
+
+p {
+  font: 200 18px/1.5 Georgia, Times New Roman, serif;
 }
 
 li {
@@ -192,5 +196,5 @@ li:hover {
   text-align: center;
   background: #e9e5df;
   color: white;
-  font-size: 30px;
+  font-size: 35px;
 }
