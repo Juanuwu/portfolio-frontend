@@ -61,6 +61,24 @@ li:hover {
    background-color: #e9e5df;
 }
 
+.edit-btn{
+  background-color: #e9e5df;
+  color: #333;
+  padding-right: 10px;
+  padding-left: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  position:absolute;
+  margin-top: -40px;
+  margin-left: -30px;
+}
+
 .avatar {
   margin-top: -250px;
   margin-left: 50px;
