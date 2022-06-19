@@ -7,19 +7,28 @@ import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  @ViewChild('openForm') uwu: ElementRef;
+  @ViewChild('loginForm') uwu: ElementRef;
 
-  constructor(private renderer2: Renderer2) {
+  constructor(private renderer2: Renderer2, private elem: ElementRef) {
   }
 
   ngOnInit(): void {
-    console.log("uwu");
+
   }
 
-  change(): void {
+  openForm(): void {
+    this.renderer2.setStyle(this.uwu.nativeElement, 'display', 'block');
+  }
 
-    this.renderer2.setStyle(this.uwu.nativeElement, 'color', 'black');
+  closeForm(): void {
+    this.renderer2.setStyle(this.uwu.nativeElement, 'display', 'none');
+  }
 
+  showEdit(): void {
+    let elements = this.elem.nativeElement.querySelectorAll('.edit');
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.display = 'block';
+    }
   }
 
 

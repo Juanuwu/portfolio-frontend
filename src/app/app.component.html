@@ -5,16 +5,16 @@
 <body>
 <div class="topnav">
   <a class="active" href="#home">Home</a>
-  <button class="edit-tog"><i class="fas fa-edit" ></i></button>
-  <button (click)="change()"#openForm class="open-button">Login</button>
-  <div class="form-popup" id="myForm">
+  <button (click)="showEdit()" class="edit-tog"><i class="fas fa-edit" ></i></button>
+  <button (click)="openForm()" class="open-button">Login</button>
+  <div #loginForm class="form-popup" id="myForm">
     <form action="/action_page.php" class="form-container">
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
       <button type="submit" class="btn">Login</button>
-      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      <button (click)="closeForm()" type="button" class="btn cancel">Close</button>
     </form>
   </div>
 </div>
