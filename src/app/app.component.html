@@ -46,12 +46,7 @@
         <h3>Headline</h3>
         <p>Lorem ipsum dolor sit amet...</p>
         <div class="edit" id="edit-btn">
-          <button class="edit-btn" onclick="myFunction()"><i class="fas fa-edit"></i></button>
-          <script>
-            function myFunction() {
-              document.getElementById("exp0").contentEditable = true;
-            }
-          </script>
+          <button class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
       </li>
       <li id="exp1">
@@ -59,7 +54,7 @@
         <h3>Headline</h3>
         <p>Lorem ipsum dolor sit amet...</p>
         <div class="edit">
-          <button class="edit-btn"><i class="fas fa-edit" ></i></button>
+          <button (click)="edit_text('exp1')" class="edit-btn"><i class="fas fa-edit" ></i></button>
         </div>
       </li>
     </ul>

@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -30,6 +31,15 @@ export class AppComponent implements OnInit {
       elements[i].style.display = 'block';
     }
   }
+
+  edit_text(id: string): void {
+
+    this.renderer2.setProperty(document.getElementById(id), 'contentEditable', true);
+
+
+  }
+
+
 
 
 }
