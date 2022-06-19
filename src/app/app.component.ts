@@ -1,4 +1,7 @@
 import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import {PopUpComponent} from "./pop-up/pop-up.component";
+
 
 
 
@@ -9,9 +12,9 @@ import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core
 })
 export class AppComponent implements OnInit {
   @ViewChild('loginForm') uwu: ElementRef;
+  title: 'frontend';
 
-  constructor(private renderer2: Renderer2, private elem: ElementRef) {
-  }
+  constructor(private renderer2: Renderer2, private elem: ElementRef, private dialogRef: MatDialog) {}
 
   ngOnInit(): void {
 
@@ -33,12 +36,12 @@ export class AppComponent implements OnInit {
   }
 
   edit_text(id: string): void {
-
     this.renderer2.setProperty(document.getElementById(id), 'contentEditable', true);
-
-
   }
 
+  openDialog(): void {
+    this.dialogRef.open(PopUpComponent);
+  }
 
 
 
