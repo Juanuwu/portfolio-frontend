@@ -3,6 +3,22 @@
 html, body { padding: 0; margin: 0;
 }
 
+html{
+  background: #e9e5df;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.ng-star-inserted {
+  display: block;
+  width: 100px;
+  length: 50px;
+  margin-left: 300px;
+}
+
+
+
+
+
+
+
+
