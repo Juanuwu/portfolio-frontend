@@ -11,6 +11,7 @@ import {PopUpComponent} from "./pop-up/pop-up.component";
 })
 export class AppComponent implements OnInit {
   @ViewChild('loginForm') uwu: ElementRef;
+
   title: 'frontend';
 
   constructor(private renderer2: Renderer2, private elem: ElementRef, private dialogRef: MatDialog) {}

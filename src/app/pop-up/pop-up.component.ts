@@ -12,10 +12,9 @@ export interface DialogData {
   styleUrls: ['./pop-up.component.css']
 })
 export class PopUpComponent implements OnInit {
-  private dialogRef: any;
+
   animal: string;
   name: string;
-  data: any;
 
 
   constructor(public dialog: MatDialog) {}
@@ -25,7 +24,7 @@ export class PopUpComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.dialog.closeAll();
   }
 
 
