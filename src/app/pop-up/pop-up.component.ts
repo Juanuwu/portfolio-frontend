@@ -27,5 +27,10 @@ export class PopUpComponent implements OnInit {
     this.dialog.closeAll();
   }
 
+  onClick(test:string): void {
+    console.log(test);
+
+  }
+
 
 }
