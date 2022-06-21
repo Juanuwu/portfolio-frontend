@@ -42,20 +42,20 @@
   <div>
     <h2>Experiencia</h2>
     <ul>
-      <li id="exp0" >
+      <li #list id="exp0" >
         <img src="http://lorempixum.com/100/100/nature/1" />
         <h3>Headline</h3>
         <p>Lorem ipsum dolor sit amet...</p>
         <div class="edit" id="edit-btn">
-          <button (click)="openDialog()" class="edit-btn"><i class="fas fa-edit"></i></button>
+          <button (click)="openDialog(list.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
       </li>
-      <li id="exp1">
+      <li #list1 id="exp1">
         <img src="http://lorempixum.com/100/100/nature/2" />
         <h3>Headline</h3>
         <p>Lorem ipsum dolor sit amet...</p>
         <div class="edit">
-          <button (click)="edit_text('exp1')" class="edit-btn"><i class="fas fa-edit" ></i></button>
+          <button (click)="openDialog(list1.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
       </li>
     </ul>
@@ -64,20 +64,20 @@
   <div>
     <h2>Educación</h2>
     <ul>
-      <li id="ed0" >
+      <li #list2 id="ed0" >
         <img src="http://lorempixum.com/100/100/nature/1" />
         <h3>Headline</h3>
         <p>Lorem ipsum dolor sit amet...</p>
         <div class="edit">
-          <button class="edit-btn"><i class="fas fa-edit" ></i></button>
+          <button (click)="openDialog(list2.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
       </li>
-      <li id="ed1" >
+      <li #list3 id="ed1" >
         <img src="http://lorempixum.com/100/100/nature/2" />
         <h3>Headline</h3>
         <p>Lorem ipsum dolor sit amet...</p>
         <div class="edit">
-          <button class="edit-btn"><i class="fas fa-edit" ></i></button>
+          <button (click)="openDialog(list3.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
       </li>
     </ul>
@@ -90,20 +90,20 @@
   <div>
     <h2>Proyectos</h2>
     <ul>
-      <li id="pr0" >
+      <li #list4 id="pr0" >
         <img src="http://lorempixum.com/100/100/nature/1"/>
         <h3>Headline</h3>
         <p>Lorem ipsum dolor sit amet...</p>
         <div class="edit">
-          <button class="edit-btn"><i class="fas fa-edit" ></i></button>
+          <button (click)="openDialog(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
       </li>
-      <li id="pr1" >
+      <li #list4 id="pr1" >
         <img src="http://lorempixum.com/100/100/nature/2" />
         <h3>Headline</h3>
         <p>Lorem ipsum dolor sit amet...</p>
         <div class="edit">
-          <button class="edit-btn"><i class="fas fa-edit" ></i></button>
+          <button (click)="openDialog(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
       </li>
     </ul>

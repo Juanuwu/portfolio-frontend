@@ -42,8 +42,9 @@ export class AppComponent implements OnInit {
     this.renderer2.setProperty(document.getElementById(id), 'contentEditable', true);
   }
 
-  openDialog(): void {
+  openDialog(id: string): void {
     this.dialogRef.open(PopUpComponent);
+    PopUpComponent.id = id;
   }
 
 

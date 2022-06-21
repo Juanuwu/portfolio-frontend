@@ -15,6 +15,8 @@ export class PopUpComponent implements OnInit {
 
   animal: string;
   name: string;
+  static id: string;
+
 
 
   constructor(public dialog: MatDialog) {}
@@ -29,6 +31,7 @@ export class PopUpComponent implements OnInit {
 
   onClick(test:string): void {
     console.log(test);
+    console.log(PopUpComponent.id)
 
   }
 
