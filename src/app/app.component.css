@@ -52,12 +52,17 @@ li {
 }
 
 
+
 li:hover {
   background: #eee;
   cursor: pointer;
 }
 
-
+#uwu {
+  float: right;
+  margin-top: -55px;
+  display: none;
+}
 
 .edit-btn{
   background-color: #e9e5df;
@@ -67,7 +72,7 @@ li:hover {
   padding-top: 10px;
   padding-bottom: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 24px;
   cursor: pointer;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
@@ -131,7 +136,7 @@ li:hover {
   width: 350px;
   right: 100px;
   top:50px;
-  position: fixed;
+  position: absolute;
   background: white;
   border: 3px solid #f1f1f1;
   z-index: 9;
@@ -191,10 +196,14 @@ li:hover {
   background: white;
 }
 
-#details {
+.aboutZone {
   padding: 20px;
 }
 
+#botonEspecial{
+  margin-left:-1230px !important;
+  margin-top: -43px !important;
+}
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {

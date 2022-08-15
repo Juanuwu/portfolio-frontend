@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><script src='app.component.ts'></script>
-  <title></title></head>
-
+  <title></title>
+</head>
 <body>
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <button (click)="showEdit()" class="edit-tog"><i class="fas fa-edit" ></i></button>
   <button (click)="openForm()" class="open-button">Login</button>
   <div #loginForm class="form-popup" id="myForm">
-    <form action="/action_page.php" class="form-container">
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-      <button type="submit" class="btn">Login</button>
+    <form class="form-container" method="post">
+      <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]="email">
+      <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="password">
+      <button type="submit"  (click)="login()" class="btn">Login</button>
       <button (click)="closeForm()" type="button" class="btn cancel">Close</button>
     </form>
   </div>
@@ -22,95 +20,105 @@
 <!--[if lt IE 7]>
 <p class="browsehappy">You arnpme using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-
-
-
 <div id="main">
   <div><img src="../assets/Captura%20de%20pantalla%202022-06-09%20153814.png" alt="Italian Trulli" class="head" style="width:1440px;height:500px; border-top-right-radius: 10px; border-top-left-radius:10px; margin:0 auto; padding: 0px"></div>
-  <div id="details">
-    <img src="../assets/avatar.png" alt="Avatar" class="avatar">
-    <h1>Juan Carosella</h1>
-    <h3>trabajo</h3>
-    <h4>lugar</h4>
+  <div class="aboutZone "#details id="1" *ngFor="let info of informacion">
+    <img src="../assets/avatar.webp" alt="Avatar" class="avatar">
+    <h1>{{info.nombre}}</h1>
+    <h3>{{info.tagline}}</h3>
+    <h4>{{info.ubicacion}}</h4>
+    <div class="edit">
+      <button (click)="openDialogAbout(details.id)" id="botonEspecial" class="edit-btn"><i class="fas fa-edit"></i></button>
+    </div>
   </div>
 </div>
 <div id="feed">
-  <div>
+  <div *ngFor="let info of informacion">
     <h2>Acerca de</h2>
-    <p>texto de ejemplo</p>
+    <p>{{info.about}}</p>
   </div>
   <div>
     <h2>Experiencia</h2>
+    <div class="add">
+      <button (click)="openDialogExp('no')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
+    </div>
     <ul>
-      <li #list id="exp0" >
+      <li #list id="{{exp.id}}" *ngFor="let exp of experiencia">
         <img src="http://lorempixum.com/100/100/nature/1" />
-        <h3>Headline</h3>
-        <p>Lorem ipsum dolor sit amet...</p>
-        <div class="edit" id="edit-btn">
-          <button (click)="openDialog(list.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
-        </div>
-      </li>
-      <li #list1 id="exp1">
-        <img src="http://lorempixum.com/100/100/nature/2" />
-        <h3>Headline</h3>
-        <p>Lorem ipsum dolor sit amet...</p>
+        <h3>{{ exp.nombre }}</h3>
+        <p>{{exp.lugar}}</p>
+        <p>{{exp.inicio}}</p>
+        <p>{{exp.end}}</p>
+        <p>{{exp.jornada}}</p>
+        <p>{{exp.ubicacion}}</p>
         <div class="edit">
-          <button (click)="openDialog(list1.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+          <button (click)="openDialogExp(list.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+        </div>
+        <div class="delete">
+          <button (click)="deleteExp(list.id)" class="add-btn"><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </li>
     </ul>
   </div>
-
   <div>
     <h2>Educación</h2>
+    <div class="add">
+      <button (click)="openDialogEd('no')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
+    </div>
     <ul>
-      <li #list2 id="ed0" >
+      <li #list2 id="{{educacion.id}}" *ngFor="let educacion of educacion">
         <img src="http://lorempixum.com/100/100/nature/1" />
-        <h3>Headline</h3>
-        <p>Lorem ipsum dolor sit amet...</p>
+        <h3>{{educacion.nombre}}</h3>
+        <p>{{educacion.lugar}}</p>
+        <p>{{educacion.inicio}}</p>
+        <p>{{educacion.end}}</p>
         <div class="edit">
-          <button (click)="openDialog(list2.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+          <button (click)="openDialogEd(list2.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
-      </li>
-      <li #list3 id="ed1" >
-        <img src="http://lorempixum.com/100/100/nature/2" />
-        <h3>Headline</h3>
-        <p>Lorem ipsum dolor sit amet...</p>
-        <div class="edit">
-          <button (click)="openDialog(list3.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+        <div class="delete">
+          <button (click)="deleteEd(list2.id)" class="add-btn"><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </li>
     </ul>
   </div>
   <div>
-    <h2>The progress element</h2>
+    <h2>Skills</h2>
+    <div class="add">
+      <button (click)="openDialogSk('no')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <ul>
+      <li #list4 id="{{skill.id}}" *ngFor="let skill of skills">
+    <h2>{{skill.skill}}</h2>
     <label for="file">Downloading progress:</label>
-    <progress id="file" value="32" max="100"> 32% </progress>
+    <progress id="file" value={{skill.numero}} max="100"> 32% </progress>
+        <div class="edit" id="uwu">
+          <button (click)="openDialogSk(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+        </div>
+        <div class="delete">
+          <button (click)="deleteSkill(list4.id)" class="add-btn"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+      </li>
+    </ul>
   </div>
   <div>
     <h2>Proyectos</h2>
+    <div class="add">
+      <button (click)="openDialogPr('no')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
+    </div>
     <ul>
-      <li #list4 id="pr0" >
+      <li #list4 id="{{proyecto.id}}" *ngFor="let proyecto of proyectos" >
         <img src="http://lorempixum.com/100/100/nature/1"/>
-        <h3>Headline</h3>
-        <p>Lorem ipsum dolor sit amet...</p>
+        <h3>{{proyecto.nombre}}</h3>
+        <p>{{proyecto.descripcion}}</p>
         <div class="edit">
-          <button (click)="openDialog(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+          <button (click)="openDialogPr(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
-      </li>
-      <li #list5 id="pr1" >
-        <img src="http://lorempixum.com/100/100/nature/2" />
-        <h3>Headline</h3>
-        <p>Lorem ipsum dolor sit amet...</p>
-        <div class="edit">
-          <button (click)="openDialog(list5.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+        <div class="delete">
+          <button (click)="deletePr(list4.id)" class="add-btn"><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </li>
     </ul>
   </div>
-
 </div>
-
-
 </body>
 </html>

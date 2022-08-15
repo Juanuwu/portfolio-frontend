@@ -5,18 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
-import { PopUpComponent } from './pop-up/pop-up.component';
+import { PopUpExp } from './pop-up-exp/pop-up-exp.component';
 import {FormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { PopUpEd } from './pop-up-ed/pop-up-ed.component';
+import { PopUpSk } from './pop-up-sk/pop-up-sk.component';
+import { PopUpPr } from './pop-up-pr/pop-up-pr.component';
+import { PopUpAbout } from './pop-up-about/pop-up-about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PopUpComponent
+    PopUpExp,
+    PopUpEd,
+    PopUpSk,
+    PopUpPr,
+    PopUpAbout
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,8 @@ import {MatInputModule} from "@angular/material/input";
     FormsModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [{provide:  APP_BASE_HREF, useValue: '/'}, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}],
   bootstrap: [AppComponent]

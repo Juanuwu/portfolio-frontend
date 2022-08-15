@@ -1,0 +1,27 @@
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="nombre">
+  </mat-form-field>
+</div>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Tagline</mat-label>
+    <input matInput [(ngModel)]="tagline">
+  </mat-form-field>
+</div>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Ubicación</mat-label>
+    <input matInput [(ngModel)]="ubicacion">
+  </mat-form-field>
+</div>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Acerca de</mat-label>
+    <input matInput [(ngModel)]="about">
+  </mat-form-field>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close] (click)="onClick()" cdkFocusInitial>Ok</button>
+</div>
+
