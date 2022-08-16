@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   informacion:any;
   email:any;
   password:any;
+  isLoggedIn: boolean
 
   @ViewChild('loginForm') uwu: ElementRef;
 
@@ -43,9 +44,10 @@ export class AppComponent implements OnInit {
 
     this.service.getUsuarios()
       .subscribe({
-        next: (value: any) => {},
+        next: (value: any) => {this.isLoggedIn = true;},
         error: (error: any) => {
           this.userService.refresh().subscribe( (data: any) => {
+            this.isLoggedIn = true;
             location.reload();
           });
         }
@@ -136,7 +138,7 @@ export class AppComponent implements OnInit {
         'Authorization': 'Bearer ' + token
       });
       // @ts-ignore
-      this.httpClient.delete('http://localhost:8080/skills/skill/'+id.toString(), {headers: headers, responseType: 'json, text', withCredentials:true}).subscribe( (data: any) => {
+      this.httpClient.delete('https://port-back-end.herokuapp.com/skills/skill'+id.toString(), {headers: headers, responseType: 'json, text', withCredentials:true}).subscribe( (data: any) => {
         location.reload();
       });
     }
@@ -149,7 +151,7 @@ export class AppComponent implements OnInit {
         'Authorization': 'Bearer ' + token
       });
       // @ts-ignore
-      this.httpClient.delete('http://localhost:8080/experiencia/experiencia/'+id.toString(), {headers: headers, responseType: 'json, text', withCredentials:true}).subscribe( (data: any) => {
+      this.httpClient.delete('https://port-back-end.herokuapp.com/experiencia/experiencia/'+id.toString(), {headers: headers, responseType: 'json, text', withCredentials:true}).subscribe( (data: any) => {
         location.reload();
       });
     }
@@ -162,7 +164,7 @@ export class AppComponent implements OnInit {
         'Authorization': 'Bearer ' + token
       });
       // @ts-ignore
-      this.httpClient.delete('http://localhost:8080/proyectos/proyecto/'+id.toString(), {headers: headers, responseType: 'json, text', withCredentials:true}).subscribe( (data: any) => {
+      this.httpClient.delete('https://port-back-end.herokuapp.com/proyectos/proyecto/'+id.toString(), {headers: headers, responseType: 'json, text', withCredentials:true}).subscribe( (data: any) => {
         location.reload();
       });
     }
@@ -175,10 +177,17 @@ export class AppComponent implements OnInit {
         'Authorization': 'Bearer ' + token
       });
       // @ts-ignore
-      this.httpClient.delete('http://localhost:8080/educacion/educacion/'+id.toString(), {headers: headers, responseType: 'json, text', withCredentials:true}).subscribe( (data: any) => {
+      this.httpClient.delete('https://port-back-end.herokuapp.com/educacion/educacion/'+id.toString(), {headers: headers, responseType: 'json, text', withCredentials:true}).subscribe( (data: any) => {
         location.reload();
       });
     }
+  }
+
+  logout() {
+    this.cookieService.delete('access_token');
+    this.cookieService.delete('refresh_token');
+    this.isLoggedIn = false;
+    location.reload();
   }
 }
 

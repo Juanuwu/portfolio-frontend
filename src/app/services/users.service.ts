@@ -17,7 +17,7 @@ export class UsersService {
     body.set('username', user.email);
     body.set('password', user.password);
     // @ts-ignore
-    return this.http.post('http://localhost:8080/login', body.toString(), {headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'), responseType: 'json, text', withCredentials:true});
+    return this.http.post('https://port-back-end.herokuapp.com/login', body.toString(), {headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'), responseType: 'json, text', withCredentials:true});
 
   }
 
@@ -28,10 +28,10 @@ export class UsersService {
         'Authorization': 'Bearer ' + token
       });
       // @ts-ignore
-      return this.http.get('http://localhost:8080/api/refreshToken', {headers: headers, responseType: 'json, text', withCredentials:true});
+      return this.http.get('https://port-back-end.herokuapp.com/api/refreshToken', {headers: headers, responseType: 'json, text', withCredentials:true});
     }
     else {
-      return this.http.get('http://localhost:8080/api/refreshToken');
+      return this.http.get('https://port-back-end.herokuapp.com/api/refreshToken');
     }
   }
 

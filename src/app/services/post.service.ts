@@ -8,12 +8,12 @@ import { CookieService } from 'ngx-cookie-service';
 
 export class PostService {
 
-  private experiencia = 'http://localhost:8080/experiencia';
-  private skills = "http://localhost:8080/skills";
-  private educacion = 'http://localhost:8080/educacion';
-  private proyectos = 'http://localhost:8080/proyectos';
-  private informacion = 'http://localhost:8080/informacion';
-  private usuarios = 'http://localhost:8080/api/usuarios/userList';
+  private experiencia = 'https://port-back-end.herokuapp.com/experiencia';
+  private skills = "https://port-back-end.herokuapp.com/skills";
+  private educacion = 'https://port-back-end.herokuapp.com/educacion';
+  private proyectos = 'https://port-back-end.herokuapp.com/proyectos';
+  private informacion = 'https://port-back-end.herokuapp.com/informacion';
+  private usuarios = 'https://port-back-end.herokuapp.com/api/usuarios/userList';
   constructor(private httpClient: HttpClient, private cookieService: CookieService) { }
 
   getExp(){

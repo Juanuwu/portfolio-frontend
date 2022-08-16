@@ -5,9 +5,10 @@
 </head>
 <body>
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <button (click)="showEdit()" class="edit-tog"><i class="fas fa-edit" ></i></button>
-  <button (click)="openForm()" class="open-button">Login</button>
+  <a class="active" href="#home">#YoProgramo</a>
+  <button *ngIf="isLoggedIn" (click)="showEdit()" class="edit-tog"><i class="fas fa-edit" ></i></button>
+  <button *ngIf="!isLoggedIn" (click)="openForm()" class="open-button">Login</button>
+  <button *ngIf="isLoggedIn" (click)="logout()" class="open-button">Logout</button>
   <div #loginForm class="form-popup" id="myForm">
     <form class="form-container" method="post">
       <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]="email">
@@ -21,7 +22,7 @@
 <p class="browsehappy">You arnpme using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <div id="main">
-  <div><img src="../assets/Captura%20de%20pantalla%202022-06-09%20153814.png" alt="Italian Trulli" class="head" style="width:1440px;height:500px; border-top-right-radius: 10px; border-top-left-radius:10px; margin:0 auto; padding: 0px"></div>
+  <div><img src="../assets/avatar.webp" alt="Italian Trulli" class="head" style="width:1440px;height:500px; border-top-right-radius: 10px; border-top-left-radius:10px; margin:0 auto; padding: 0px"></div>
   <div class="aboutZone "#details id="1" *ngFor="let info of informacion">
     <img src="../assets/avatar.webp" alt="Avatar" class="avatar">
     <h1>{{info.nombre}}</h1>
@@ -44,7 +45,7 @@
     </div>
     <ul>
       <li #list id="{{exp.id}}" *ngFor="let exp of experiencia">
-        <img src="http://lorempixum.com/100/100/nature/1" />
+        <img src="" />
         <h3>{{ exp.nombre }}</h3>
         <p>{{exp.lugar}}</p>
         <p>{{exp.inicio}}</p>
@@ -67,7 +68,7 @@
     </div>
     <ul>
       <li #list2 id="{{educacion.id}}" *ngFor="let educacion of educacion">
-        <img src="http://lorempixum.com/100/100/nature/1" />
+        <img src="" />
         <h3>{{educacion.nombre}}</h3>
         <p>{{educacion.lugar}}</p>
         <p>{{educacion.inicio}}</p>
@@ -107,7 +108,7 @@
     </div>
     <ul>
       <li #list4 id="{{proyecto.id}}" *ngFor="let proyecto of proyectos" >
-        <img src="http://lorempixum.com/100/100/nature/1"/>
+        <img src="" />
         <h3>{{proyecto.nombre}}</h3>
         <p>{{proyecto.descripcion}}</p>
         <div class="edit">
