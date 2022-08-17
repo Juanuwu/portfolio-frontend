@@ -138,7 +138,7 @@ export class AppComponent implements OnInit {
         'Authorization': 'Bearer ' + token
       });
       // @ts-ignore
-      this.httpClient.delete('https://port-back-end.herokuapp.com/skills/skill'+id.toString(), {headers: headers, responseType: 'json, text', withCredentials:true}).subscribe( (data: any) => {
+      this.httpClient.delete('https://port-back-end.herokuapp.com/skills/skill/'+id.toString(), {headers: headers, responseType: 'json, text', withCredentials:true}).subscribe( (data: any) => {
         location.reload();
       });
     }
