@@ -184,10 +184,13 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
-    this.cookieService.delete('access_token');
-    this.cookieService.delete('refresh_token');
-    this.isLoggedIn = false;
-    location.reload();
+    //this.cookieService.delete('access_token');
+    //this.cookieService.delete('refresh_token');
+    this.httpClient.get("https://port-back-end.herokuapp.com/logout", {withCredentials:true}).subscribe( (data: any) => {
+      this.isLoggedIn = false;
+      location.reload();
+    }, error => {this.isLoggedIn = false;
+      location.reload();});
   }
 }
 
