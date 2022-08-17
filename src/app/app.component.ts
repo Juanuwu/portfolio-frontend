@@ -104,6 +104,14 @@ export class AppComponent implements OnInit {
     for (let i = 0; i < elements.length; i++) {
       elements[i].style.display = 'block';
     }
+    let add = this.elem.nativeElement.querySelectorAll('.add');
+    for (let i = 0; i < add.length; i++) {
+      add[i].style.display = 'block';
+    }
+    let delElem = this.elem.nativeElement.querySelectorAll('.delete');
+    for (let i = 0; i < delElem.length; i++) {
+      delElem[i].style.display = 'block';
+    }
   }
 
   openDialogExp(id: string): void {

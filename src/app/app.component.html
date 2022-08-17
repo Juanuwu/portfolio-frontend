@@ -52,11 +52,11 @@
         <p>{{exp.end}}</p>
         <p>{{exp.jornada}}</p>
         <p>{{exp.ubicacion}}</p>
-        <div class="edit">
+        <div class="edit" id="exp">
           <button (click)="openDialogExp(list.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
         <div class="delete">
-          <button (click)="deleteExp(list.id)" class="add-btn"><i class="fa-solid fa-trash-can"></i></button>
+          <button (click)="deleteExp(list.id)" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </li>
     </ul>
@@ -73,11 +73,11 @@
         <p>{{educacion.lugar}}</p>
         <p>{{educacion.inicio}}</p>
         <p>{{educacion.end}}</p>
-        <div class="edit">
+        <div class="edit" id="ed">
           <button (click)="openDialogEd(list2.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
         <div class="delete">
-          <button (click)="deleteEd(list2.id)" class="add-btn"><i class="fa-solid fa-trash-can"></i></button>
+          <button (click)="deleteEd(list2.id)" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </li>
     </ul>
@@ -92,11 +92,11 @@
     <h2>{{skill.skill}}</h2>
     <label for="file">Downloading progress:</label>
     <progress id="file" value={{skill.numero}} max="100"> 32% </progress>
-        <div class="edit" id="uwu">
+        <div class="edit" id="sk">
           <button (click)="openDialogSk(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
         <div class="delete">
-          <button (click)="deleteSkill(list4.id)" class="add-btn"><i class="fa-solid fa-trash-can"></i></button>
+          <button (click)="deleteSkill(list4.id)" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </li>
     </ul>
@@ -115,7 +115,7 @@
           <button (click)="openDialogPr(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
         <div class="delete">
-          <button (click)="deletePr(list4.id)" class="add-btn"><i class="fa-solid fa-trash-can"></i></button>
+          <button (click)="deletePr(list4.id)" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </li>
     </ul>
