@@ -28,8 +28,8 @@
     <h1>{{info.nombre}}</h1>
     <h3>{{info.tagline}}</h3>
     <h4>{{info.ubicacion}}</h4>
-    <div class="edit">
-      <button (click)="openDialogAbout(details.id)" id="botonEspecial" class="edit-btn"><i class="fas fa-edit"></i></button>
+    <div class="edit" id="botonEspecial">
+      <button (click)="openDialogAbout(details.id)"  id="botonEspecia2" class="edit-btn"><i class="fas fa-edit"></i></button>
     </div>
   </div>
 </div>
@@ -47,10 +47,8 @@
       <li #list id="{{exp.id}}" *ngFor="let exp of experiencia">
         <img src="" />
         <h3>{{ exp.nombre }}</h3>
-        <p>{{exp.lugar}}</p>
-        <p>{{exp.inicio}}</p>
-        <p>{{exp.end}}</p>
-        <p>{{exp.jornada}}</p>
+        <p>{{exp.lugar}} - {{exp.jornada}}</p>
+        <p>{{exp.inicio}}-{{exp.end}}</p>
         <p>{{exp.ubicacion}}</p>
         <div class="edit" id="exp">
           <button (click)="openDialogExp(list.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
@@ -71,8 +69,7 @@
         <img src="" />
         <h3>{{educacion.nombre}}</h3>
         <p>{{educacion.lugar}}</p>
-        <p>{{educacion.inicio}}</p>
-        <p>{{educacion.end}}</p>
+        <p>{{educacion.inicio}}-{{educacion.end}}</p>
         <div class="edit" id="ed">
           <button (click)="openDialogEd(list2.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
@@ -90,7 +87,6 @@
     <ul>
       <li #list4 id="{{skill.id}}" *ngFor="let skill of skills">
     <h2>{{skill.skill}}</h2>
-    <label for="file">Downloading progress:</label>
     <progress id="file" value={{skill.numero}} max="100"> 32% </progress>
         <div class="edit" id="sk">
           <button (click)="openDialogSk(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
@@ -111,7 +107,7 @@
         <img src="" />
         <h3>{{proyecto.nombre}}</h3>
         <p>{{proyecto.descripcion}}</p>
-        <div class="edit">
+        <div class="edit" id="pr">
           <button (click)="openDialogPr(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
         <div class="delete">
