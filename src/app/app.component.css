@@ -23,6 +23,16 @@ h3 {
   font: bold 25px/1.5 Helvetica, Verdana, sans-serif;
 }
 
+#tagline{
+  font: normal 18px/1.5 Helvetica, Verdana, sans-serif;
+  margin-bottom: 17px;
+}
+
+#name{
+  font: bold 28px/1.5 Helvetica, Verdana, sans-serif;
+  margin-bottom: 10px;
+}
+
 li img {
   float: left;
   margin: 0 15px 0 0;
@@ -46,6 +56,10 @@ li {
 .edit {
   float: right;
   display: none;
+}
+
+.avatar {
+  border: 5px solid #ffffff;
 }
 
 #sk{

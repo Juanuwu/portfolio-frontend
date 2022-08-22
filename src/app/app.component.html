@@ -22,11 +22,11 @@
 <p class="browsehappy">You arnpme using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <div id="main">
-  <div><img src="../assets/avatar.webp" alt="Italian Trulli" class="head" style="width:1440px;height:500px; border-top-right-radius: 10px; border-top-left-radius:10px; margin:0 auto; padding: 0px"></div>
+  <div><img src="../assets/factorio.webp" alt="portada" class="head" style="width:1440px;height:500px; border-top-right-radius: 10px; border-top-left-radius:10px; margin:0 auto; padding: 0px"></div>
   <div class="aboutZone "#details id="1" *ngFor="let info of informacion">
     <img src="../assets/avatar.webp" alt="Avatar" class="avatar">
-    <h1>{{info.nombre}}</h1>
-    <h3>{{info.tagline}}</h3>
+    <h1 id="name">{{info.nombre}}</h1>
+    <h3 id="tagline">{{info.tagline}}</h3>
     <h4>{{info.ubicacion}}</h4>
     <div class="edit" id="botonEspecial">
       <button (click)="openDialogAbout(details.id)"  id="botonEspecia2" class="edit-btn"><i class="fas fa-edit"></i></button>

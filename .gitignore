@@ -47,3 +47,5 @@ firebase.json
 .firebase/hosting.ZGlzdFxmcm9udGVuZA.cache
 .github/workflows/firebase-hosting-pull-request.yml
 .github/workflows/firebase-hosting-merge.yml
+src/assets/avatar.webp
+src/assets/factorio.webp
