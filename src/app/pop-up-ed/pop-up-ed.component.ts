@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
 import {CreateService} from "../services/create.service";
 
@@ -16,14 +16,22 @@ export class PopUpEd implements OnInit {
   lugar: string;
   inicio: string;
   final: string;
-  static id: string;
 
+  static id: string;
+  static nombreIn: string;
+  static lugarIn: string;
+  static inicioIn: string;
+  static finalIn: string;
 
   constructor(public dialog: MatDialog, private cookieService: CookieService, private http: HttpClient, private createSevice: CreateService) {
   }
 
 
   ngOnInit(): void {
+    this.nombre = PopUpEd.nombreIn;
+    this.lugar = PopUpEd.lugarIn;
+    this.inicio = PopUpEd.inicioIn;
+    this.final = PopUpEd.finalIn;
   }
 
   onNoClick(): void {

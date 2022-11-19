@@ -1,9 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
 import {CreateService} from "../services/create.service";
-
 
 @Component({
   selector: 'app-pop-up-exp',
@@ -19,13 +18,26 @@ export class PopUpExp implements OnInit {
   final: string;
   jornada: string;
   ubicacion: string;
+
   static id: string;
+  static nombreIn: string;
+  static lugarIn: string;
+  static inicioIn: string;
+  static finalIn: string;
+  static jornadaIn: string;
+  static ubicacionIn: string;
 
 
   constructor(public dialog: MatDialog, private cookieService: CookieService, private http: HttpClient, private createSevice: CreateService) {}
 
 
   ngOnInit(): void {
+    this.nombre = PopUpExp.nombreIn;
+    this.lugar = PopUpExp.lugarIn;
+    this.inicio = PopUpExp.inicioIn;
+    this.final = PopUpExp.finalIn;
+    this.jornada = PopUpExp.jornadaIn;
+    this.ubicacion = PopUpExp.ubicacionIn;
   }
 
   onNoClick(): void {

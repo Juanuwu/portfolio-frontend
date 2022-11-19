@@ -114,29 +114,47 @@ export class AppComponent implements OnInit {
     }
   }
 
-  openDialogExp(id: string): void {
+  openDialogExp(id: string, nombre: string, lugar: string, inicio:string, final: string, jornada: string, ubicacion:string): void {
     this.dialogRef.open(PopUpExp);
     PopUpExp.id = id;
+    PopUpExp.nombreIn = nombre;
+    PopUpExp.lugarIn = lugar;
+    PopUpExp.inicioIn = inicio;
+    PopUpExp.finalIn = final;
+    PopUpExp.jornadaIn = jornada;
+    PopUpExp.ubicacionIn = ubicacion;
   }
 
-  openDialogEd(id: string): void {
+  openDialogEd(id: string, nombre: string, lugar: string, inicio: string, final:string): void {
     this.dialogRef.open(PopUpEd);
     PopUpEd.id = id;
+    PopUpEd.nombreIn = nombre;
+    PopUpEd.lugarIn = lugar;
+    PopUpEd.inicioIn = inicio;
+    PopUpEd.finalIn = final;
   }
 
-  openDialogSk(id: string): void {
+  openDialogSk(id: string, nombre: string, numero:string): void {
     this.dialogRef.open(PopUpSk);
     PopUpSk.id = id;
+    PopUpSk.nombreIn = nombre;
+    PopUpSk.numeroIn = numero;
   }
 
-  openDialogPr(id: string) {
+  openDialogPr(id: string, nombre: string, descripcion: string) {
     this.dialogRef.open(PopUpPr);
     PopUpPr.id = id;
+    PopUpPr.nombreIn = nombre;
+    PopUpPr.descripcionIn = descripcion;
   }
 
-  openDialogAbout(id: string) {
+  openDialogAbout(id: string, nombre: string, tagline:string, ubucacion:string, about:string) {
     this.dialogRef.open(PopUpAbout);
     PopUpAbout.id = id;
+    PopUpAbout.nombreIn = nombre;
+    PopUpAbout.taglineIn = tagline;
+    PopUpAbout.ubicacionIn = ubucacion;
+    PopUpAbout.aboutIn = about;
   }
 
   deleteSkill(id: string): void {

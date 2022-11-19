@@ -29,7 +29,7 @@
     <h3 id="tagline">{{info.tagline}}</h3>
     <h4>{{info.ubicacion}}</h4>
     <div class="edit" id="botonEspecial">
-      <button (click)="openDialogAbout(details.id)"  id="botonEspecia2" class="edit-btn"><i class="fas fa-edit"></i></button>
+      <button (click)="openDialogAbout(details.id, info.nombre, info.tagline, info.ubicacion, info.about)"  id="botonEspecia2" class="edit-btn"><i class="fas fa-edit"></i></button>
     </div>
   </div>
 </div>
@@ -41,7 +41,7 @@
   <div>
     <h2>Experiencia</h2>
     <div class="add">
-      <button (click)="openDialogExp('no')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
+      <button (click)="openDialogExp('no', '', '', '', '', '', '')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
     </div>
     <ul>
       <li #list id="{{exp.id}}" *ngFor="let exp of experiencia">
@@ -51,7 +51,7 @@
         <p>{{exp.inicio}}-{{exp.end}}</p>
         <p>{{exp.ubicacion}}</p>
         <div class="edit" id="exp">
-          <button (click)="openDialogExp(list.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+          <button (click)="openDialogExp(list.id, exp.nombre, exp.lugar, exp.inicio, exp.end, exp.jornada, exp.ubicacion)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
         <div class="delete">
           <button (click)="deleteExp(list.id)" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
@@ -62,7 +62,7 @@
   <div>
     <h2>Educación</h2>
     <div class="add">
-      <button (click)="openDialogEd('no')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
+      <button (click)="openDialogEd('no', '', '', '', '')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
     </div>
     <ul>
       <li #list2 id="{{educacion.id}}" *ngFor="let educacion of educacion">
@@ -71,7 +71,7 @@
         <p>{{educacion.lugar}}</p>
         <p>{{educacion.inicio}}-{{educacion.end}}</p>
         <div class="edit" id="ed">
-          <button (click)="openDialogEd(list2.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+          <button (click)="openDialogEd(list2.id, educacion.nombre, educacion.lugar, educacion.inicio, educacion.end)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
         <div class="delete">
           <button (click)="deleteEd(list2.id)" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
@@ -82,14 +82,14 @@
   <div>
     <h2>Skills</h2>
     <div class="add">
-      <button (click)="openDialogSk('no')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
+      <button (click)="openDialogSk('no', '', '')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
     </div>
     <ul>
       <li #list4 id="{{skill.id}}" *ngFor="let skill of skills">
     <h2>{{skill.skill}}</h2>
     <progress id="file" value={{skill.numero}} max="100"> 32% </progress>
         <div class="edit" id="sk">
-          <button (click)="openDialogSk(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+          <button (click)="openDialogSk(list4.id, skill.skill, skill.numero)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
         <div class="delete">
           <button (click)="deleteSkill(list4.id)" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
@@ -100,7 +100,7 @@
   <div>
     <h2>Proyectos</h2>
     <div class="add">
-      <button (click)="openDialogPr('no')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
+      <button (click)="openDialogPr('no', '', '')" class="add-btn"><i class="fa-solid fa-plus"></i></button>
     </div>
     <ul>
       <li #list4 id="{{proyecto.id}}" *ngFor="let proyecto of proyectos" >
@@ -108,7 +108,7 @@
         <h3>{{proyecto.nombre}}</h3>
         <p>{{proyecto.descripcion}}</p>
         <div class="edit" id="pr">
-          <button (click)="openDialogPr(list4.id)" class="edit-btn"><i class="fas fa-edit"></i></button>
+          <button (click)="openDialogPr(list4.id, proyecto. nombre, proyecto.descripcion)" class="edit-btn"><i class="fas fa-edit"></i></button>
         </div>
         <div class="delete">
           <button (click)="deletePr(list4.id)" class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>

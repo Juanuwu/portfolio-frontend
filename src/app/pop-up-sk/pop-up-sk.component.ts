@@ -14,13 +14,18 @@ export class PopUpSk implements OnInit {
 
   nombre: string;
   numero: string;
+
   static id: string;
+  static nombreIn: string;
+  static numeroIn: string;
 
 
   constructor(private cookieService: CookieService, private http: HttpClient, public dialog: MatDialog, private createSevice: CreateService) {}
 
 
   ngOnInit(): void {
+    this.nombre = PopUpSk.nombreIn;
+    this.numero = PopUpSk.numeroIn;
   }
 
   onNoClick(): void {
